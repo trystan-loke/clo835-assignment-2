@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clo835-assignment-2-deployment
+  labels:
+    app: clo835-assignment-2-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: clo835-assignment-2
+  template:
+    metadata:
+      labels:
+        app: clo835-assignment-2
+    spec:
+      containers:
+      - name: clo835-assignment-2
+        image: trystan00000/clo835-assignment-2:latest
+        ports:
+        - containerPort: 3030
